@@ -43,7 +43,7 @@ $FORGE_COMPOSER install --no-interaction --prefer-dist --optimize-autoloader --n
 printf '\nℹ️ Installing NPM dependencies based on \"./package-lock.json\"\n'
 npm ci
 printf '\nℹ️ Generating JS App files\n'
-npm run prod
+npm run build
 
 printf '\nℹ️ Laravel Artisan commands\n'
 if [ -f artisan ]; then
