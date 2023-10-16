@@ -50,14 +50,14 @@ if [ -f artisan ]; then
   printf '\nℹ️ Link ./public/storage\n'
   $FORGE_PHP artisan storage:link
 
+  printf '\nℹ️ Database Migrations\n'
+  $FORGE_PHP artisan migrate --force
+
   printf '\nℹ️ Clear and cache routes, config, views, events\n'
   $FORGE_PHP artisan config:cache
   $FORGE_PHP artisan route:cache
   $FORGE_PHP artisan view:cache
   $FORGE_PHP artisan event:cache
-
-  printf '\nℹ️ Database Migrations\n'
-  $FORGE_PHP artisan migrate --force
 
   printf '\nℹ️ Restart Horizon Queue Workers\n'
   #$FORGE_PHP artisan horizon:terminate
