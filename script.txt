@@ -59,8 +59,9 @@ if [ -f artisan ]; then
   $FORGE_PHP artisan view:cache
   $FORGE_PHP artisan event:cache
 
-  printf '\nℹ️ Restart Horizon Queue Workers\n'
+  printf '\nℹ️ Restart (Horizon) Queue Workers\n'
   #$FORGE_PHP artisan horizon:terminate
+  #$FORGE_PHP artisan queue:restart
 fi
 
 printf '\nℹ️ !!! Link Deployment Directory !!!\n'
