@@ -10,6 +10,9 @@ DEPLOYMENT_DIRECTORY=$RELEASES_DIRECTORY/$RELEASE_NAME
 # stop script on error signal (-e) and undefined variables (-u)
 set -eu
 
+printf '\nℹ️ Creating backup %s\n'
+cd ~/$DOMAIN/current && $FORGE_PHP artisan backup:run && cd ../
+
 printf '\nℹ️ Starting deployment %s\n' "$RELEASE_NAME"
 mkdir -p "$RELEASES_DIRECTORY" && cd "$RELEASES_DIRECTORY"
 
